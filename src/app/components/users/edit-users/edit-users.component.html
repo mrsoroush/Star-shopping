@@ -1,0 +1,8 @@
+<div *ngIf="!allowEdit">You can't modify this user</div>
+<div *ngIf="allowEdit">
+  <input  [(ngModel)]='name' type="text" class="form-control">
+  <input [(ngModel)]='username' type="text" class="form-control">
+  <input [(ngModel)]='password' type="text" class="form-control">
+  <input [(ngModel)]='email' type="text" class="form-control">
+  <button class="btn btn-primary" (click)="onSave()">Save Changes</button>
+</div>

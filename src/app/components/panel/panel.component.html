@@ -1,0 +1,10 @@
+<p>
+  welcome to administration panel...
+</p>
+<ul>
+  <li *ngFor="let a of admins">
+    <a [routerLink]="['/users', a.id]"
+       [queryParams]="{allowEdit: a.id === 1 ? 0 : 1}">{{ a.name }}</a>
+  </li>
+</ul>
+<router-outlet></router-outlet>
