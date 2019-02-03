@@ -10,10 +10,15 @@
         <a class="nav-link" routerLink="/calculation">Calculation <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="/login">Login</a>
+        <a class="nav-link" routerLink="/practice">Practice</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="/practice">Practice</a>
+      <span *ngIf="logedIn; else logout">
+        <a class="nav-link" routerLink="/login" [queryParams]="{logout: 1}">Logout (Welcome {{ logedinUsername }})</a>
+      </span>
+      <ng-template #logout>
+        <a class="nav-link" routerLink="/login">Login</a>
+      </ng-template>
       </li>
       <!-- <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

@@ -18,6 +18,7 @@ import { Notfound404Component } from './components/notfound404/notfound404.compo
 import { AuthGuard } from './services/auth-guard.service';
 import { CanDeactivateGuard } from './services/can-deactivate-guard.service';
 import { PracticeComponent } from './components/practice/practice.component';
+import { SubjectService } from './services/subject.service';
 
 
 @NgModule({
@@ -40,7 +41,12 @@ import { PracticeComponent } from './components/practice/practice.component';
     FormsModule,
     AngularFontAwesomeModule
   ],
-  providers: [LoginService, AuthGuard, CanDeactivateGuard],
+  providers: [
+    LoginService,
+    AuthGuard,
+    CanDeactivateGuard,
+    SubjectService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

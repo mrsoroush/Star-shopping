@@ -41,7 +41,6 @@ export class PracticeComponent implements OnInit, OnDestroy {
           () => {
             observer.complete();
           }, 8000);
-          
       });
 
     this.customSubscription = customObservable.subscribe(
