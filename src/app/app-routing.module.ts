@@ -9,6 +9,7 @@ import { EditUsersComponent } from './components/users/edit-users/edit-users.com
 import { Notfound404Component } from './components/notfound404/notfound404.component';
 import { AuthGuard } from './services/auth-guard.service';
 import { CanDeactivateGuard } from './services/can-deactivate-guard.service';
+import { PracticeComponent } from './components/practice/practice.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
     { path: ':id', component: AccountsComponent },
     { path: ':id/edit', canDeactivate: [CanDeactivateGuard] ,component: EditUsersComponent },
   ]},
+  { path: 'practice', component: PracticeComponent },
   { path: 'not-found', component: Notfound404Component },
   { path: '**' , redirectTo: '/not-found' }
 ];

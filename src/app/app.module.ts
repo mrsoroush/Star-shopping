@@ -17,6 +17,7 @@ import { EditUsersComponent } from './components/users/edit-users/edit-users.com
 import { Notfound404Component } from './components/notfound404/notfound404.component';
 import { AuthGuard } from './services/auth-guard.service';
 import { CanDeactivateGuard } from './services/can-deactivate-guard.service';
+import { PracticeComponent } from './components/practice/practice.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { CanDeactivateGuard } from './services/can-deactivate-guard.service';
     PanelComponent,
     AccountsComponent,
     EditUsersComponent,
-    Notfound404Component
+    Notfound404Component,
+    PracticeComponent
   ],
   imports: [
     BrowserModule,
