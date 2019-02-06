@@ -1,6 +1,7 @@
-import { Component, OnInit, ViewChild, ElementRef, OnDestroy } from '@angular/core';
+import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { NgForm } from '@angular/forms';
 
 import { LoginService } from 'src/app/services/login.service';
 import { IAdmin } from 'src/app/interfaces/admin';
@@ -13,8 +14,7 @@ import { SubjectService } from 'src/app/services/subject.service';
 })
 export class LoginComponent implements OnInit, OnDestroy {
   
-  @ViewChild('username') username: ElementRef;
-  @ViewChild('password') password: ElementRef;
+  @ViewChild('f') inputForm: NgForm;
   admins: IAdmin[] = [{id: 0, name: '', username: '', password: '', email: ''}];
   admin: IAdmin;
   user: string;
@@ -40,8 +40,8 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   loginSubmit(){
-    this.user = this.username.nativeElement.value;
-    this.pass = this.password.nativeElement.value;
+    this.user = this.inputForm.value.username;
+    this.pass = this.inputForm.value['password'];
     this.admin = this.loginService.getAdmin(this.user, this.pass);
     if (this.admin){
       this.loginService.loggedIn = true;
