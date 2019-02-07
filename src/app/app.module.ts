@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
@@ -19,6 +19,7 @@ import { AuthGuard } from './services/auth-guard.service';
 import { CanDeactivateGuard } from './services/can-deactivate-guard.service';
 import { PracticeComponent } from './components/practice/practice.component';
 import { SubjectService } from './services/subject.service';
+import { AddCustomersComponent } from './components/users/add-customers/add-customers.component';
 
 
 @NgModule({
@@ -33,13 +34,15 @@ import { SubjectService } from './services/subject.service';
     AccountsComponent,
     EditUsersComponent,
     Notfound404Component,
-    PracticeComponent
+    PracticeComponent,
+    AddCustomersComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    ReactiveFormsModule
   ],
   providers: [
     LoginService,

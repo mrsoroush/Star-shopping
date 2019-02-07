@@ -6,9 +6,6 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-        <a class="nav-link" routerLink="/calculation">Calculation <span class="sr-only">(current)</span></a>
-      </li>
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="/practice">Practice</a>
       </li>
@@ -19,6 +16,12 @@
       <ng-template #logout>
         <a class="nav-link" routerLink="/login">Login</a>
       </ng-template>
+      </li>
+      <li *ngIf="logedIn" class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/users">Customers</a>
+      </li>
+      <li *ngIf="logedIn" class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <a class="nav-link" routerLink="/calculation">Calculation <span class="sr-only">(current)</span></a>
       </li>
       <!-- <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

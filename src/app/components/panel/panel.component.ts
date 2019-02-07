@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { IAdmin } from 'src/app/interfaces/admin';
 import { LoginService } from 'src/app/services/login.service';
 
@@ -11,10 +13,14 @@ export class PanelComponent implements OnInit {
 
   admins: IAdmin[] = [{id: 0, name: '', username: '', password: '', email: ''}];
 
-  constructor(private loginService: LoginService) { }
+  constructor(private loginService: LoginService, private route: Router) { }
 
   ngOnInit() {
     this.admins = this.loginService.getAdmins();
+  }
+
+  addCustomer() {
+    this.route.navigate(['/addCustomers']);
   }
 
 }

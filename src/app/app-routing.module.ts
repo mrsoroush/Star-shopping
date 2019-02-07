@@ -10,17 +10,19 @@ import { Notfound404Component } from './components/notfound404/notfound404.compo
 import { AuthGuard } from './services/auth-guard.service';
 import { CanDeactivateGuard } from './services/can-deactivate-guard.service';
 import { PracticeComponent } from './components/practice/practice.component';
+import { AddCustomersComponent } from './components/users/add-customers/add-customers.component';
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'calculation', component: CalculationComponent },
+  { path: 'calculation', canActivate: [AuthGuard],component: CalculationComponent },
   { path: 'login', component: LoginComponent },
   { path: 'users', canActivate: [AuthGuard], component: PanelComponent, children: [
     { path: ':id', component: AccountsComponent },
     { path: ':id/edit', canDeactivate: [CanDeactivateGuard] ,component: EditUsersComponent },
   ]},
   { path: 'practice', component: PracticeComponent },
+  { path: 'addCustomers', component: AddCustomersComponent },
   { path: 'not-found', component: Notfound404Component },
   { path: '**' , redirectTo: '/not-found' }
 ];
