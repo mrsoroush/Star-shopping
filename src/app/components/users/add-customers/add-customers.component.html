@@ -4,6 +4,7 @@
       <label for="validationCustom01">First name</label>
       <input [formControlName]="'firstname'" type="text" class="form-control" id="validationCustom01" placeholder="First name">
       <span class="alert" *ngIf="!inputForm.get('firstname').valid && inputForm.get('firstname').touched">Enter the firstname.</span>
+      <!-- <span class="alert" *ngIf="inputForm.get('firstname').errors['isFirstnameBanned'] && inputForm.get('firstname').touched">This Firstname is BANNED.</span> -->
     </div>
     <div class="col-md-4 mb-3">
       <label for="validationCustom02">Last name</label>
@@ -18,6 +19,7 @@
         </div>
         <input [formControlName]="'email'" type="text" class="form-control" id="validationCustomEmail" placeholder="Email" aria-describedby="inputGroupPrepend">
         <span class="alert" *ngIf="!inputForm.get('email').valid && inputForm.get('email').touched">Enter a valid email address.</span>
+        <span class="alert" *ngIf="inputForm.get('email').errors['isBannedEmail']">This email is banned.</span>
       </div>
     </div>
   </div>
@@ -25,7 +27,7 @@
     <div class="col-md-3 mb-3">
       <label for="validationCustom05">Mobile</label>
       <input [formControlName]="'mobile'" type="text" class="form-control" id="validationCustom05" placeholder="Mobile">
-      <span class="alert" *ngIf="!inputForm.get('mobile').valid && inputForm.get('mobile').touched">Enter a correct mobile number.</span>
+      <span class="alert" *ngIf="!inputForm.get('mobile').valid && inputForm.get('mobile').touched">Enter a mobile number.</span>
     </div>
     <div class="col-md-6 mb-3">
       <label for="validationCustom03">City</label>
