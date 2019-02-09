@@ -12,6 +12,7 @@ import { LoginService } from 'src/app/services/login.service';
 export class PanelComponent implements OnInit {
 
   admins: IAdmin[] = [{id: 0, name: '', username: '', password: '', email: ''}];
+  filterString = '';
 
   constructor(private loginService: LoginService, private route: Router) { }
 

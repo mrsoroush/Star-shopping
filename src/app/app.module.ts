@@ -20,6 +20,7 @@ import { CanDeactivateGuard } from './services/can-deactivate-guard.service';
 import { PracticeComponent } from './components/practice/practice.component';
 import { SubjectService } from './services/subject.service';
 import { AddCustomersComponent } from './components/users/add-customers/add-customers.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { AddCustomersComponent } from './components/users/add-customers/add-cust
     EditUsersComponent,
     Notfound404Component,
     PracticeComponent,
-    AddCustomersComponent
+    AddCustomersComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

@@ -1,9 +1,14 @@
 <p>
   welcome to administration panel...
 </p>
-<button class="btn btn-primary" (click)="addCustomer()">Add new customer</button>
-<ul>
-  <li *ngFor="let a of admins">
+<button class="btn btn-primary custom" (click)="addCustomer()">Add new customer</button>
+<form class="form-inline my-2 my-lg-0">
+  <input class="form-control mr-sm-2" type="search" placeholder="Search users..." aria-label="Search" [(ngModel)]="filterString" name="search">
+  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+</form>
+<br>
+<ul> 
+  <li *ngFor="let a of admins | filter:filterString:'name'">
     <a [routerLink]="['/users', a.id]"
        [queryParams]="{allowEdit: a.id === 1 ? 0 : 1}">{{ a.name }}</a>
   </li>
