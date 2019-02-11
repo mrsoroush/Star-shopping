@@ -10,6 +10,7 @@ export class LoginService {
     {id: 1, name: 'soroush', username: 'mr.soroush', password: '1234', email: 'soroush.shokuee@yahoo.com'},
     {id: 2, name: 'behnam', username: 'behnam12', password: '5678', email: 'khaksari.behnam@gmail.com'},
     {id: 3, name: 'farnoush', username: 'test', password: '9012', email: 'test@test.com'},
+    {id: 4, name: 'sima', username: 'sima12', password: '0214', email: 'sima@gmail.com'}
   ];
   loggedIn = false;
 

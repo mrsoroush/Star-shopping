@@ -11,10 +11,10 @@ export class FilterPipe implements PipeTransform {
     }
     const tempArray = [];
     for(let item of value){
-      if(item[prop] === fString) {
+      if(item[prop].startsWith(fString)) {
         tempArray.push(item);
       }
-    }
+    } 
     return tempArray;
   }
 

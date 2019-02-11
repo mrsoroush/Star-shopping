@@ -21,6 +21,9 @@ import { PracticeComponent } from './components/practice/practice.component';
 import { SubjectService } from './services/subject.service';
 import { AddCustomersComponent } from './components/users/add-customers/add-customers.component';
 import { FilterPipe } from './pipes/filter.pipe';
+import { TestApiComponent } from './components/test-api/test-api.component';
+import { PostService } from './services/post.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -37,20 +40,23 @@ import { FilterPipe } from './pipes/filter.pipe';
     Notfound404Component,
     PracticeComponent,
     AddCustomersComponent,
-    FilterPipe
+    FilterPipe,
+    TestApiComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     AngularFontAwesomeModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     LoginService,
     AuthGuard,
     CanDeactivateGuard,
-    SubjectService
+    SubjectService,
+    PostService
   ],
   bootstrap: [AppComponent]
 })
