@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { CanDeactivateGuard } from './services/can-deactivate-guard.service';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -16,14 +18,12 @@ import { AccountsComponent } from './components/users/accounts/accounts.componen
 import { EditUsersComponent } from './components/users/edit-users/edit-users.component';
 import { Notfound404Component } from './components/notfound404/notfound404.component';
 import { AuthGuard } from './services/auth-guard.service';
-import { CanDeactivateGuard } from './services/can-deactivate-guard.service';
 import { PracticeComponent } from './components/practice/practice.component';
 import { SubjectService } from './services/subject.service';
 import { AddCustomersComponent } from './components/users/add-customers/add-customers.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { TestApiComponent } from './components/test-api/test-api.component';
 import { PostService } from './services/post.service';
-import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({

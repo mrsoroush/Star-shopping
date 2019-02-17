@@ -11,6 +11,7 @@ import { AuthGuard } from './services/auth-guard.service';
 import { CanDeactivateGuard } from './services/can-deactivate-guard.service';
 import { PracticeComponent } from './components/practice/practice.component';
 import { AddCustomersComponent } from './components/users/add-customers/add-customers.component';
+import { TestApiComponent } from './components/test-api/test-api.component';
 
 
 const routes: Routes = [
@@ -23,6 +24,7 @@ const routes: Routes = [
   ]},
   { path: 'practice', component: PracticeComponent },
   { path: 'addCustomers', component: AddCustomersComponent },
+  { path: 'posts', component: TestApiComponent },
   { path: 'not-found', component: Notfound404Component },
   { path: '**' , redirectTo: '/not-found' }
 ];

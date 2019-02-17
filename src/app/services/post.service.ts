@@ -1,22 +1,20 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { IPost } from '../interfaces/post';
+import 'rxjs/add/operator/map';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class PostService {
 
-  url = "http://jsonplaceholder.typicode.com/posts";
-
   constructor(private http: HttpClient) { }
 
   getPosts() {
-    return this.http.get(this.url);
+    return this.http.get('/posts').map((posts) => {
+      return posts;
+    });
   }
 
-  postPosts(post: IPost) {
-    return this.http.post(this.url, post);
-  }
 
 }
