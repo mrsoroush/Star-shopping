@@ -8,12 +8,12 @@ import 'rxjs/add/operator/map';
 })
 export class PostService {
 
+  url = 'localhost:4300/posts';
+
   constructor(private http: HttpClient) { }
 
   getPosts() {
-    return this.http.get('/posts').map((posts) => {
-      return posts;
-    });
+    return this.http.get(this.url);
   }
 
 

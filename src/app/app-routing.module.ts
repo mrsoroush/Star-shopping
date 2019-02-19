@@ -24,7 +24,7 @@ const routes: Routes = [
   ]},
   { path: 'practice', component: PracticeComponent },
   { path: 'addCustomers', component: AddCustomersComponent },
-  { path: 'posts', component: TestApiComponent },
+  { path: 'postsb', component: TestApiComponent },
   { path: 'not-found', component: Notfound404Component },
   { path: '**' , redirectTo: '/not-found' }
 ];

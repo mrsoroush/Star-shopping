@@ -15,9 +15,9 @@ export class TestApiComponent implements OnInit, OnDestroy {
   constructor(private postService: PostService) { }
   
   ngOnInit() {
-    this.httpSubscription = this.postService.getPosts().subscribe((response) => {
-      this.postArray = response;
-    });
+    this.httpSubscription = this.postService.getPosts().subscribe(
+      response => this.postArray = response
+    );
   }
   
   ngOnDestroy(): void {
